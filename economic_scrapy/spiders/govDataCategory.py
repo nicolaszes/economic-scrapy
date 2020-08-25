@@ -6,6 +6,7 @@ class GovdataSpider(scrapy.Spider):
     name = 'govDataCategory'
     # allowed_domains = ['data.stats.gov.cn']
     basic_url = 'https://data.stats.gov.cn/easyquery.htm'
+    start_urls = ['https://data.stats.gov.cn/easyquery.htm']
 
     def parse(self, response):
         yield scrapy.FormRequest(

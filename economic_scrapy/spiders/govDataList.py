@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import scrapy
-# from scrapy.pipelines import MySQLPipeline
+from economic_scrapy.db.category_db import CategoryBo, CategoryDao
+
+# logger = Logs.get_log(__name__)
+
 
 class GovdatalistSpider(scrapy.Spider):
     name = 'govDataList'
@@ -9,14 +12,19 @@ class GovdatalistSpider(scrapy.Spider):
     start_urls = ['https://blog.scrapinghub.com']
 
     def parse(self, response):
-        yield {
-            "id": "A01111",
-            "pid": "",
-            "wdcode": "zb",
-            "dbcode": "decode",
-            "isParent": True,
-            "name": "价格指数"
-        }
+        category_list = CategoryDao.get_child_list()
+        print(category_list)
+        # for category in category_list:
+        #     print(category.name)
 
-        # for next_page in response.css('a.next-posts-link'):
-        #     yield response.follow(next_page, self.parse)
+        # print('parse')
+        # yield scrapy.Request(
+        #     url=self.basic_url,
+        #     formdata={
+        #         "id": "zb",
+        #         "dbcode": "hgyd",
+        #         "wdcode": "zb",
+        #         "m": "getTree"
+        #     },
+        #     callback=self.parse_column
+        # )
