@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-# from urllib import parse
 
 class GovdataSpider(scrapy.Spider):
     name = 'govDataCategory'

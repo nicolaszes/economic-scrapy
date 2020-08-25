@@ -34,8 +34,10 @@ class MySQLPipeline(object):
 
     # 对数据进行处理
     def process_item(self, item, spider):
-        print(item)
-        self.insert_db(item)
+        if self.search_db(item) is None:
+            self.insert_db(item)
+        else:
+            self.update_db(item)
         return item
 
     # 插入数据
@@ -52,6 +54,23 @@ class MySQLPipeline(object):
         sql = 'INSERT INTO category VALUES(%s,%s,%s,%s,%s,%s)'
         self.db_cur.execute(sql, values)
 
+    def update_db(self, item):
+        self.db_cur.execute(
+            """update category set pid=%s, wdcode=%s, dbcode=%s, isParent=%s, name=%s where id=%s""",
+            (item['pid'], item['wdcode'], item['dbcode'], item['isParent'], item['name'], item['id'])
+        )
+        self.db_conn.commit()
+    
+    # 查询数据
+    def search_db(self, item):
+        self.db_cur.execute("""SELECT * from category where id = %s""", (item["id"]))
+        result = self.db_cur.fetchone()
+
+        return result
+
+    def delete_db(self, item):
+        self.db_cur.execute("""delete from category where id<=%s""", (item["id"]))
+        self.db_conn.commit()
 
 class EconomicScrapyPipeline(object):
     def process_item(self, item, spider):
