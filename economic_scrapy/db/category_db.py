@@ -1,18 +1,20 @@
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, CHAR
+from sqlalchemy.types import Boolean
+
 from economic_scrapy.base.db_base import Base
 from economic_scrapy.base.spider_utils import DBUtil, BeanUtil
 
 
 class CategoryBo(Base):
     # 表的名字:
-    __tablename__ = 'category'
+    __tablename__ = 't_category'
 
     # 表的结构:
     id = Column(String(255), primary_key=True, autoincrement=False)
     pid = Column(String(255))
     wdcode = Column(String(255))
     dbcode = Column(String(255))
-    isParent = Column(String(255))
+    isParent = Column(Boolean)
     name = Column(String(255))
 
     def __init__(
@@ -21,7 +23,7 @@ class CategoryBo(Base):
         pid=None,
         wdcode=None,
         dbcode=None,
-        isParent=None,
+        isParent=False,
         name=None
     ):
         self.id = id
@@ -68,7 +70,8 @@ class CategoryDao:
         session = DBUtil.get_session()
         res = session \
             .query(cls.BO) \
-            .filter(cls.BO.isParent is False)
+            .filter(cls.BO.isParent) \
+            .all()
         session.close()
         return res
 
