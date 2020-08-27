@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
+import re
+
 from urllib.parse import urlencode
 
-from economic_scrapy.db.category_db import CategoryBo, CategoryDao
+from economic_scrapy.db.category_db import CategoryDao
+from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 
 # logger = Logs.get_log(__name__)
 
@@ -18,9 +21,6 @@ class GovdatalistSpider(scrapy.Spider):
         category_list = CategoryDao.get_child_list()
         for category in category_list[:1]:
 
-            params = {"wdcode": "sj", "valuecode": "1949-"}
-            print(urlencode(params, True))
-
             query = {
                 "m": "QueryData",
                 "dbcode": category.dbcode,
@@ -30,8 +30,11 @@ class GovdatalistSpider(scrapy.Spider):
                 # "dfwds[]": '[{"wdcode": "sj", "valuecode": "1949-"}]'
             }
 
+            print(category.name)
+            # https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=[]&dfwds=[{%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22},%20{%22wdcode%22:%22zb%22,%22valuecode%22:%22A010102%22}]
+            url = self.basic_url + "?" + urlencode(query) + "&dfwds=[{%22wdcode%22:%22zb%22,%22valuecode%22:%22" + category.id + "%22},{%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22}]"
             yield scrapy.Request(
-                url=self.basic_url + "?" + urlencode(query) + "&dfwds=[{%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22}]",
+                url=url,
                 callback=self.parse_data
             )
 
@@ -41,7 +44,25 @@ class GovdatalistSpider(scrapy.Spider):
 
         body = json.loads(response.body)
 
-        if body["returncode"] == 200:
-            print(body["returndata"]["datanodes"])
-        else:
+        if body["returncode"] != 200:
             print('scrapy error')
+            return
+
+        # print(body["returndata"]["datanodes"])
+
+        for node in body["returndata"]["datanodes"][54:55]:
+            if node["data"]["hasdata"] is False:
+                continue
+
+            monthly_bo = MonthlyBo()
+            match_obj = re.match(r'zb.(.*)_sj.(.*)', node["code"], re.M | re.I)
+
+            monthly_bo.metrics = match_obj.group(1)
+            monthly_bo.month = match_obj.group(2)
+            monthly_bo.value = node["data"]["data"]
+
+            if MonthlyDao.get_pid(monthly_bo):
+                MonthlyDao.update_detail(monthly_bo)
+            else:
+                MonthlyDao.insert(monthly_bo)
+

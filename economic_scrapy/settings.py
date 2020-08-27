@@ -20,7 +20,7 @@ ITEM_PIPELINES = {
 
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'
 ROBOTSTXT_OBEY=False
-DOWNLOAD_DELAY = 0.25 # 250 ms of delay
+DOWNLOAD_DELAY = 0.25  # 250 ms of delay
 
 BOT_NAME = 'economic_scrapy'
 

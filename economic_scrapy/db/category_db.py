@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, CHAR
+from sqlalchemy import Column, String
 from sqlalchemy.types import Boolean
 
 from economic_scrapy.base.db_base import Base
@@ -70,7 +70,7 @@ class CategoryDao:
         session = DBUtil.get_session()
         res = session \
             .query(cls.BO) \
-            .filter(cls.BO.isParent) \
+            .filter(cls.BO.isParent == '0') \
             .all()
         session.close()
         return res
