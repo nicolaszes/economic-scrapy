@@ -5,9 +5,9 @@ from economic_scrapy.base.db_base import Base
 from economic_scrapy.base.spider_utils import DBUtil, BeanUtil
 
 
-class CategoryBo(Base):
+class MonthCategoryBo(Base):
     # 表的名字:
-    __tablename__ = 't_category'
+    __tablename__ = 't_month_category'
 
     # 表的结构:
     id = Column(String(255), primary_key=True, autoincrement=False)
@@ -34,8 +34,8 @@ class CategoryBo(Base):
         self.name = name
 
 
-class CategoryDao:
-    BO = CategoryBo
+class MonthCategoryDao:
+    BO = MonthCategoryBo
 
     @classmethod
     def insert(cls, item):
@@ -48,11 +48,11 @@ class CategoryDao:
         return pid
 
     @classmethod
-    def update_detail(cls, category: CategoryBo):
+    def update_detail(cls, category: MonthCategoryBo):
         session = DBUtil.get_session()
         item = session \
-            .query(CategoryBo) \
-            .filter(CategoryBo.id == category.id) \
+            .query(MonthCategoryBo) \
+            .filter(MonthCategoryBo.id == category.id) \
             .first()
         BeanUtil.copy_obj_properties(category, item)
         session.commit()

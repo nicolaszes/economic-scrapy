@@ -51,25 +51,25 @@ class MySQLPipeline(object):
             item['name'],
         )
 
-        sql = 'INSERT INTO t_category VALUES(%s,%s,%s,%s,%s,%s)'
+        sql = 'INSERT INTO t_month_category VALUES(%s,%s,%s,%s,%s,%s)'
         self.db_cur.execute(sql, values)
 
     def update_db(self, item):
         self.db_cur.execute(
-            """update t_category set pid=%s, wdcode=%s, dbcode=%s, isParent=%s, name=%s where id=%s""",
+            """update t_month_category set pid=%s, wdcode=%s, dbcode=%s, isParent=%s, name=%s where id=%s""",
             (item['pid'], item['wdcode'], item['dbcode'], item['isParent'], item['name'], item['id'])
         )
         self.db_conn.commit()
     
     # 查询数据
     def search_db(self, item):
-        self.db_cur.execute("""SELECT * from t_category where id = %s""", (item["id"]))
+        self.db_cur.execute("""SELECT * from t_month_category where id = %s""", (item["id"]))
         result = self.db_cur.fetchone()
 
         return result
 
     def delete_db(self, item):
-        self.db_cur.execute("""delete from t_category where id<=%s""", (item["id"]))
+        self.db_cur.execute("""delete from t_month_category where id<=%s""", (item["id"]))
         self.db_conn.commit()
 
 class EconomicScrapyPipeline(object):

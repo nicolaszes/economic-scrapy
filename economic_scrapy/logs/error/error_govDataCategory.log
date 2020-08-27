@@ -1,0 +1,18 @@
+[2020-08-27 20:00:41,838][MainThread:4490470848][task_id:scrapy.core.scraper][scraper.py:158][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm> (referer: None)]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 29, in wrapper
+    logger = create_logger()
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 13, in create_logger
+    fh = logging.FileHandler("/path/to/test.log")
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1087, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1116, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/path/to/test.log'
+[2020-08-27 20:09:42,559][MainThread:4693312960][task_id:scrapy.core.scraper][scraper.py:158][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm> (referer: None)]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+TypeError: parse() missing 1 required positional argument: 'response'

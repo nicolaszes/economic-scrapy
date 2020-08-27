@@ -5,9 +5,13 @@ import re
 
 from urllib.parse import urlencode
 
-from economic_scrapy.db.category_db import CategoryDao
+from economic_scrapy.db.category_db import MonthCategoryDao
 from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 
+from economic_scrapy.base.exception_decor import exception
+from economic_scrapy.logging.logging_utils import Logs
+
+# Logs.init_log_config("govDataList")
 # logger = Logs.get_log(__name__)
 
 
@@ -18,9 +22,8 @@ class GovdatalistSpider(scrapy.Spider):
     start_urls = ['https://data.stats.gov.cn/easyquery.htm']
 
     def parse(self, response):
-        category_list = CategoryDao.get_child_list()
-        for category in category_list[:1]:
-
+        category_list = MonthCategoryDao.get_child_list()
+        for category in category_list[0:10]:
             query = {
                 "m": "QueryData",
                 "dbcode": category.dbcode,
@@ -38,6 +41,7 @@ class GovdatalistSpider(scrapy.Spider):
                 callback=self.parse_data
             )
 
+
     def parse_data(self, response):
         if response is None:
             return
@@ -45,12 +49,9 @@ class GovdatalistSpider(scrapy.Spider):
         body = json.loads(response.body)
 
         if body["returncode"] != 200:
-            print('scrapy error')
             return
 
-        # print(body["returndata"]["datanodes"])
-
-        for node in body["returndata"]["datanodes"][54:55]:
+        for node in body["returndata"]["datanodes"]:
             if node["data"]["hasdata"] is False:
                 continue
 
