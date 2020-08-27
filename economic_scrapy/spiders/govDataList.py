@@ -11,8 +11,8 @@ from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 from economic_scrapy.base.exception_decor import exception
 from economic_scrapy.logging.logging_utils import Logs
 
-# Logs.init_log_config("govDataList")
-# logger = Logs.get_log(__name__)
+Logs.init_log_config("govDataList")
+logger = Logs.get_log(__name__)
 
 
 class GovdatalistSpider(scrapy.Spider):
@@ -21,6 +21,7 @@ class GovdatalistSpider(scrapy.Spider):
     basic_url = 'https://data.stats.gov.cn/easyquery.htm'
     start_urls = ['https://data.stats.gov.cn/easyquery.htm']
 
+    @exception
     def parse(self, response):
         category_list = MonthCategoryDao.get_child_list()
         for category in category_list[0:10]:
@@ -41,7 +42,7 @@ class GovdatalistSpider(scrapy.Spider):
                 callback=self.parse_data
             )
 
-
+    @exception
     def parse_data(self, response):
         if response is None:
             return

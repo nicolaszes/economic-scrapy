@@ -66,3 +66,42 @@ FileNotFoundError: [Errno 2] No such file or directory: '/path/to/test.log'
  'spider_exceptions/FileNotFoundError': 1,
  'start_time': datetime.datetime(2020, 8, 27, 11, 58, 18, 661450)}]
 [2020-08-27 19:58:19,822][MainThread:4531373504][task_id:scrapy.core.engine][engine.py:326][INFO][Spider closed (finished)]
+[2020-08-27 20:13:58,882][MainThread:4523308480][task_id:scrapy.utils.log][log.py:146][INFO][Scrapy 1.5.1 started (bot: economic_scrapy)]
+[2020-08-27 20:13:58,892][MainThread:4523308480][task_id:scrapy.utils.log][log.py:149][INFO][Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.1, w3lib 1.19.0, Twisted 18.9.0, Python 3.7.5 (default, Nov  1 2019, 02:16:32) - [Clang 11.0.0 (clang-1100.0.33.8)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0i  14 Aug 2018), cryptography 2.4.1, Platform Darwin-18.7.0-x86_64-i386-64bit]
+[2020-08-27 20:13:58,899][MainThread:4523308480][task_id:scrapy.crawler][crawler.py:38][INFO][Overridden settings: {'BOT_NAME': 'economic_scrapy', 'DOWNLOAD_DELAY': 0.25, 'NEWSPIDER_MODULE': 'economic_scrapy.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['economic_scrapy.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'}]
+[2020-08-27 20:13:58,958][MainThread:4523308480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']]
+[2020-08-27 20:13:59,029][MainThread:4523308480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']]
+[2020-08-27 20:13:59,036][MainThread:4523308480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']]
+[2020-08-27 20:13:59,055][MainThread:4523308480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled item pipelines:
+['economic_scrapy.pipelines.MySQLPipeline']]
+[2020-08-27 20:13:59,055][MainThread:4523308480][task_id:scrapy.core.engine][engine.py:256][INFO][Spider opened]
+[2020-08-27 20:13:59,083][MainThread:4523308480][task_id:scrapy.extensions.logstats][logstats.py:48][INFO][Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)]
+[2020-08-27 20:14:04,428][MainThread:4523308480][task_id:scrapy.crawler][crawler.py:258][INFO][Received SIGINT, shutting down gracefully. Send again to force ]
+[2020-08-27 20:14:05,195][MainThread:4523308480][task_id:scrapy.crawler][crawler.py:265][INFO][Received SIGINT twice, forcing unclean shutdown]
+[2020-08-27 20:14:07,124][MainThread:4523308480][task_id:scrapy.core.engine][engine.py:295][INFO][Closing spider (shutdown)]
+[2020-08-27 20:14:07,127][MainThread:4523308480][task_id:scrapy.core.downloader.handlers.http11][http11.py:484][WARNING][Got data loss in https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010107%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests]
+[2020-08-27 20:14:07,130][MainThread:4523308480][task_id:scrapy.core.downloader.handlers.http11][http11.py:484][WARNING][Got data loss in https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010103%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests]
+[2020-08-27 20:14:07,132][MainThread:4523308480][task_id:scrapy.core.downloader.handlers.http11][http11.py:484][WARNING][Got data loss in https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010109%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests]
+[2020-08-27 20:14:07,142][MainThread:4523308480][task_id:scrapy.core.downloader.handlers.http11][http11.py:484][WARNING][Got data loss in https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010105%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests]
+[2020-08-27 20:14:07,150][MainThread:4523308480][task_id:scrapy.core.downloader.handlers.http11][http11.py:484][WARNING][Got data loss in https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010104%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests]
