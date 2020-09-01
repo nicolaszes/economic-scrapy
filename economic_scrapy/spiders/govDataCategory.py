@@ -3,10 +3,10 @@ import scrapy
 import json
 
 from economic_scrapy.base.exception_decor import exception
-from economic_scrapy.logging.logging_utils import Logs
-
-Logs.init_log_config("govDataCategory")
-logger = Logs.get_log(__name__)
+# from economic_scrapy.logging.logging_utils import Logs
+#
+# Logs.init_log_config("govDataCategory")
+# logger = Logs.get_log(__name__)
 
 
 class GovdataSpider(scrapy.Spider):

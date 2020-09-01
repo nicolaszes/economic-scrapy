@@ -9,10 +9,10 @@ from economic_scrapy.db.category_db import MonthCategoryDao
 from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 
 from economic_scrapy.base.exception_decor import exception
-from economic_scrapy.logging.logging_utils import Logs
-
-Logs.init_log_config("govDataList")
-logger = Logs.get_log(__name__)
+# from economic_scrapy.logging.logging_utils import Logs
+#
+# Logs.init_log_config("govDataList")
+# logger = Logs.get_log(__name__)
 
 
 class GovdatalistSpider(scrapy.Spider):
