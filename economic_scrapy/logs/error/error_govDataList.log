@@ -1,13 +1,624 @@
-[2020-08-27 19:58:19,707][MainThread:4531373504][task_id:scrapy.core.scraper][scraper.py:158][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm> (referer: None)]
+[2020-09-01 08:41:54,834][MainThread:4457670080][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010101%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (referer: https://data.stats.gov.cn/easyquery.htm)]
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govDataList.py", line 74, in parse_data
+    MonthlyDao.insert(monthly_bo)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/monthly_db.py", line 42, in insert
+    session.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+[SQL: INSERT INTO t_monthly (metrics, month, value, name) VALUES (%(metrics)s, %(month)s, %(value)s, %(name)s)]
+[parameters: {'metrics': 'A01010101', 'month': '202007', 'value': 102.69585411, 'name': '居民消费价格指数(上年同月=100)'}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
     current.result = callback(current.result, *args, **kw)
-  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 29, in wrapper
-    logger = create_logger()
-  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 13, in create_logger
-    fh = logging.FileHandler("/path/to/test.log")
-  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1087, in __init__
-    StreamHandler.__init__(self, self._open())
-  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py", line 1116, in _open
-    return open(self.baseFilename, self.mode, encoding=self.encoding)
-FileNotFoundError: [Errno 2] No such file or directory: '/path/to/test.log'
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
+    err += "There was an exception in  "
+TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'
+[2020-09-01 08:42:27,061][MainThread:4494157248][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010101%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govDataList.py", line 74, in parse_data
+    MonthlyDao.insert(monthly_bo)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/monthly_db.py", line 42, in insert
+    session.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+[SQL: INSERT INTO t_monthly (metrics, month, value, name) VALUES (%(metrics)s, %(month)s, %(value)s, %(name)s)]
+[parameters: {'metrics': 'A01010101', 'month': '202007', 'value': 102.69585411, 'name': '居民消费价格指数(上年同月=100)'}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
+    err += "There was an exception in  "
+TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'
+[2020-09-01 08:42:47,613][MainThread:4686939584][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010101%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govDataList.py", line 74, in parse_data
+    MonthlyDao.insert(monthly_bo)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/monthly_db.py", line 42, in insert
+    session.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+[SQL: INSERT INTO t_monthly (metrics, month, value, name) VALUES (%(metrics)s, %(month)s, %(value)s, %(name)s)]
+[parameters: {'metrics': 'A01010101', 'month': '202007', 'value': 102.69585411, 'name': '居民消费价格指数(上年同月=100)'}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
+    err += "There was an exception in  "
+TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'
+[2020-09-01 08:43:39,742][MainThread:4545709504][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010101%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govDataList.py", line 74, in parse_data
+    MonthlyDao.insert(monthly_bo)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/monthly_db.py", line 42, in insert
+    session.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+[SQL: INSERT INTO t_monthly (metrics, month, value, name) VALUES (%(metrics)s, %(month)s, %(value)s, %(name)s)]
+[parameters: {'metrics': 'A01010101', 'month': '202007', 'value': 102.69585411, 'name': '居民消费价格指数(上年同月=100)'}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
+    err += "There was an exception in  "
+TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'
+[2020-09-01 08:47:38,817][MainThread:4434556352][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010101%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govDataList.py", line 74, in parse_data
+    MonthlyDao.insert(monthly_bo)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/monthly_db.py", line 42, in insert
+    session.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+[SQL: INSERT INTO t_monthly (metrics, month, value, name) VALUES (%(metrics)s, %(month)s, %(value)s, %(name)s)]
+[parameters: {'metrics': 'A01010101', 'month': '202007', 'value': 102.69585411, 'name': '居民消费价格指数(上年同月=100)'}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
+    err += "There was an exception in  "
+TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'
+[2020-09-01 08:48:41,302][MainThread:4564981184][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010101%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govDataList.py", line 74, in parse_data
+    MonthlyDao.insert(monthly_bo)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/monthly_db.py", line 42, in insert
+    session.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 503, in commit
+    self._prepare_impl()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2479, in flush
+    self._flush(objects)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2577, in _flush
+    flush_context.execute()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1366, "Incorrect string value: '\\xE5\\xB1\\x85\\xE6\\xB0\\x91...' for column 'name' at row 1")
+[SQL: INSERT INTO t_monthly (metrics, month, value, name) VALUES (%(metrics)s, %(month)s, %(value)s, %(name)s)]
+[parameters: {'metrics': 'A01010101', 'month': '202007', 'value': 102.69585411, 'name': '居民消费价格指数(上年同月=100)'}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
+    err += "There was an exception in  "
+TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'

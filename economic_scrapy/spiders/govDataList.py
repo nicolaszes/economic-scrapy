@@ -24,7 +24,7 @@ class GovdatalistSpider(scrapy.Spider):
     @exception
     def parse(self, response):
         category_list = MonthCategoryDao.get_child_list()
-        for category in category_list[0:10]:
+        for category in category_list[20:30]:
             query = {
                 "m": "QueryData",
                 "dbcode": category.dbcode,
@@ -52,6 +52,8 @@ class GovdatalistSpider(scrapy.Spider):
         if body["returncode"] != 200:
             return
 
+        index_wdnodes = body["returndata"]["wdnodes"][0]["nodes"]
+
         for node in body["returndata"]["datanodes"]:
             if node["data"]["hasdata"] is False:
                 continue
@@ -62,6 +64,9 @@ class GovdatalistSpider(scrapy.Spider):
             monthly_bo.metrics = match_obj.group(1)
             monthly_bo.month = match_obj.group(2)
             monthly_bo.value = node["data"]["data"]
+
+            for item in list(filter(lambda x: x["code"] == monthly_bo.metrics, index_wdnodes)):
+                monthly_bo.name = item["name"]
 
             if MonthlyDao.get_pid(monthly_bo):
                 MonthlyDao.update_detail(monthly_bo)

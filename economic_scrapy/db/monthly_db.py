@@ -14,25 +14,28 @@ class MonthlyBo(Base):
     metrics = Column(String(255))
     month = Column(String(255))
     value = Column(FLOAT)
+    name = Column(String(255))
 
     def __init__(
         self,
         pid=None,
         metrics=None,
         month=None,
-        value=None
+        value=None,
+        name=None
     ):
         self.pid = pid
         self.metrics = metrics
         self.month = month
         self.value = value
+        self.name = name
 
 
 class MonthlyDao:
     BO = MonthlyBo
 
     @classmethod
-    def insert(cls, item):
+    def insert(cls, item: MonthlyBo):
         session = DBUtil.get_session()
         # 插入
         session.add(item)
