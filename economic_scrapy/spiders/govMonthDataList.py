@@ -5,7 +5,7 @@ import re
 
 from urllib.parse import urlencode
 
-from economic_scrapy.db.category_db import MonthCategoryDao
+from economic_scrapy.db.month_category_db import MonthCategoryDao
 from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 
 from economic_scrapy.base.exception_decor import exception

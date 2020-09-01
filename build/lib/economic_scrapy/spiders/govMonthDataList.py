@@ -5,7 +5,7 @@ import re
 
 from urllib.parse import urlencode
 
-from economic_scrapy.db.category_db import MonthCategoryDao
+from economic_scrapy.db.month_category_db import MonthCategoryDao
 from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 
 from economic_scrapy.base.exception_decor import exception
@@ -15,7 +15,7 @@ Logs.init_log_config("govMonthDataList")
 logger = Logs.get_log(__name__)
 
 
-class GovMonthDataListSpider(scrapy.Spider):
+class GovdatalistSpider(scrapy.Spider):
     name = 'govMonthDataList'
     # allowed_domains = ['data.stats.gov.cn']
     basic_url = 'https://data.stats.gov.cn/easyquery.htm'
