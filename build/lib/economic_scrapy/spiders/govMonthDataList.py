@@ -9,14 +9,14 @@ from economic_scrapy.db.category_db import MonthCategoryDao
 from economic_scrapy.db.monthly_db import MonthlyBo, MonthlyDao
 
 from economic_scrapy.base.exception_decor import exception
-# from economic_scrapy.logging.logging_utils import Logs
-#
-# Logs.init_log_config("govDataList")
-# logger = Logs.get_log(__name__)
+from economic_scrapy.logging_utils.logging_utils import Logs
+
+Logs.init_log_config("govMonthDataList")
+logger = Logs.get_log(__name__)
 
 
-class GovdatalistSpider(scrapy.Spider):
-    name = 'govDataList'
+class GovMonthDataListSpider(scrapy.Spider):
+    name = 'govMonthDataList'
     # allowed_domains = ['data.stats.gov.cn']
     basic_url = 'https://data.stats.gov.cn/easyquery.htm'
     start_urls = ['https://data.stats.gov.cn/easyquery.htm']

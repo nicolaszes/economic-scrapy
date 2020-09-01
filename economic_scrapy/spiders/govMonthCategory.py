@@ -3,14 +3,14 @@ import scrapy
 import json
 
 from economic_scrapy.base.exception_decor import exception
-# from economic_scrapy.logging.logging_utils import Logs
-#
-# Logs.init_log_config("govDataCategory")
-# logger = Logs.get_log(__name__)
+from economic_scrapy.logging_utils.logging_utils import Logs
+
+Logs.init_log_config("govMonthCategory")
+logger = Logs.get_log(__name__)
 
 
-class GovdataSpider(scrapy.Spider):
-    name = 'govDataCategory'
+class GovMonthCategorySpider(scrapy.Spider):
+    name = 'govMonthCategory'
     # allowed_domains = ['data.stats.gov.cn']
     basic_url = 'https://data.stats.gov.cn/easyquery.htm'
     start_urls = ['https://data.stats.gov.cn/easyquery.htm']

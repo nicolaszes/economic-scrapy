@@ -622,3 +622,17 @@ Traceback (most recent call last):
   File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/base/exception_decor.py", line 34, in wrapper
     err += "There was an exception in  "
 TypeError: unsupported operand type(s) for +=: 'InternalError' and 'str'
+[2020-09-01 12:00:09,308][MainThread:4407211456][task_id:scrapy.downloadermiddlewares.retry][retry.py:97][ERROR][Gave up retrying <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010402%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]> (failed 3 times): User timeout caused connection failure: Getting https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010402%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D] took longer than 180.0 seconds..]
+[2020-09-01 12:00:09,428][MainThread:4407211456][task_id:scrapy.core.scraper][scraper.py:219][ERROR][Error downloading <GET https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010402%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D]>]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    return (yield download_func(request=request, spider=spider))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/downloader/handlers/http11.py", line 374, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://data.stats.gov.cn/easyquery.htm?m=QueryData&dbcode=hgyd&rowcode=zb&colcode=sj&wds=%5B%5D&dfwds=[%7B%22wdcode%22:%22zb%22,%22valuecode%22:%22A010402%22%7D,%7B%22wdcode%22:%22sj%22,%22valuecode%22:%221949-%22%7D] took longer than 180.0 seconds..

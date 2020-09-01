@@ -1,0 +1,78 @@
+[2020-09-01 16:37:05,504][MainThread:4529964480][task_id:scrapy.utils.log][log.py:146][INFO][Scrapy 1.5.1 started (bot: economic_scrapy)]
+[2020-09-01 16:37:05,517][MainThread:4529964480][task_id:scrapy.utils.log][log.py:149][INFO][Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.1, w3lib 1.19.0, Twisted 18.9.0, Python 3.7.5 (default, Nov  1 2019, 02:16:32) - [Clang 11.0.0 (clang-1100.0.33.8)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0i  14 Aug 2018), cryptography 2.4.1, Platform Darwin-18.7.0-x86_64-i386-64bit]
+[2020-09-01 16:37:05,522][MainThread:4529964480][task_id:scrapy.crawler][crawler.py:38][INFO][Overridden settings: {'BOT_NAME': 'economic_scrapy', 'DOWNLOAD_DELAY': 0.25, 'NEWSPIDER_MODULE': 'economic_scrapy.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['economic_scrapy.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'}]
+[2020-09-01 16:37:05,581][MainThread:4529964480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']]
+[2020-09-01 16:37:05,649][MainThread:4529964480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']]
+[2020-09-01 16:37:05,654][MainThread:4529964480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']]
+[2020-09-01 16:37:05,671][MainThread:4529964480][task_id:scrapy.middleware][middleware.py:53][INFO][Enabled item pipelines:
+['economic_scrapy.pipelines.MySQLPipeline']]
+[2020-09-01 16:37:05,672][MainThread:4529964480][task_id:scrapy.core.engine][engine.py:256][INFO][Spider opened]
+[2020-09-01 16:37:05,998][MainThread:4529964480][task_id:scrapy.extensions.logstats][logstats.py:48][INFO][Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)]
+[2020-09-01 16:38:06,001][MainThread:4529964480][task_id:scrapy.extensions.logstats][logstats.py:48][INFO][Crawled 189 pages (at 189 pages/min), scraped 282 items (at 282 items/min)]
+[2020-09-01 16:39:06,002][MainThread:4529964480][task_id:scrapy.extensions.logstats][logstats.py:48][INFO][Crawled 383 pages (at 194 pages/min), scraped 545 items (at 263 items/min)]
+[2020-09-01 16:39:25,496][MainThread:4529964480][task_id:scrapy.crawler][crawler.py:258][INFO][Received SIGINT, shutting down gracefully. Send again to force ]
+[2020-09-01 16:39:25,497][MainThread:4529964480][task_id:scrapy.core.engine][engine.py:295][INFO][Closing spider (shutdown)]
+[2020-09-01 16:39:25,688][MainThread:4529964480][task_id:scrapy.crawler][crawler.py:265][INFO][Received SIGINT twice, forcing unclean shutdown]
+[2020-09-01 16:52:21,683][MainThread:4378305984][task_id:scrapy.utils.log][log.py:144][INFO][Scrapy 2.3.0 started (bot: economic_scrapy)]
+[2020-09-01 16:52:21,717][MainThread:4378305984][task_id:scrapy.utils.log][log.py:150][INFO][Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.7.5 (default, Nov  1 2019, 02:16:32) - [Clang 11.0.0 (clang-1100.0.33.8)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 3.0, Platform Darwin-18.7.0-x86_64-i386-64bit]
+[2020-09-01 16:52:21,733][MainThread:4378305984][task_id:scrapy.crawler][crawler.py:60][INFO][Overridden settings:
+{'BOT_NAME': 'economic_scrapy',
+ 'DOWNLOAD_DELAY': 0.25,
+ 'NEWSPIDER_MODULE': 'economic_scrapy.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['economic_scrapy.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) '
+               'AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 '
+               'Safari/536.5'}]
+[2020-09-01 16:52:21,774][MainThread:4378305984][task_id:scrapy.extensions.telnet][telnet.py:55][INFO][Telnet Password: 42cf2afd1cd5ce04]
+[2020-09-01 16:52:21,828][MainThread:4378305984][task_id:scrapy.middleware][middleware.py:48][INFO][Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']]
+[2020-09-01 16:52:22,009][MainThread:4378305984][task_id:scrapy.middleware][middleware.py:48][INFO][Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']]
+[2020-09-01 16:52:22,018][MainThread:4378305984][task_id:scrapy.middleware][middleware.py:48][INFO][Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']]
+[2020-09-01 16:52:22,062][MainThread:4378305984][task_id:scrapy.middleware][middleware.py:48][INFO][Enabled item pipelines:
+['economic_scrapy.pipelines.MySQLPipeline']]
+[2020-09-01 16:52:22,062][MainThread:4378305984][task_id:scrapy.core.engine][engine.py:267][INFO][Spider opened]
+[2020-09-01 16:52:22,088][MainThread:4378305984][task_id:scrapy.extensions.logstats][logstats.py:48][INFO][Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)]
+[2020-09-01 16:52:22,090][MainThread:4378305984][task_id:scrapy.extensions.telnet][telnet.py:69][INFO][Telnet console listening on 127.0.0.1:6023]
+[2020-09-01 16:52:50,469][MainThread:4378305984][task_id:scrapy.crawler][crawler.py:290][INFO][Received SIGINT, shutting down gracefully. Send again to force ]
