@@ -13,7 +13,7 @@ economic_scrapy/base/db_base.py
 economic_scrapy/base/exception_decor.py
 economic_scrapy/base/spider_utils.py
 economic_scrapy/db/__init__.py
-economic_scrapy/db/category_db.py
+economic_scrapy/db/month_category_db.py
 economic_scrapy/db/monthly_db.py
 economic_scrapy/logging_utils/__init__.py
 economic_scrapy/logging_utils/logging_utils.py

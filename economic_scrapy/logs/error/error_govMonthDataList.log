@@ -1,0 +1,444 @@
+[2020-09-06 14:26:22,929][MainThread:4666566080][task_id:scrapy.core.scraper][scraper.py:158][ERROR][Spider error processing <GET https://data.stats.gov.cn/waf_verify.htm> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthCategory.py", line 35, in parse_column
+    for column in json.loads(column_str):
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-09-06 14:27:39,726][MainThread:4587349440][task_id:scrapy.core.scraper][scraper.py:158][ERROR][Spider error processing <GET https://data.stats.gov.cn/waf_verify.htm> (referer: https://data.stats.gov.cn/waf_verify.htm)]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthCategory.py", line 35, in parse_column
+    for column in json.loads(column_str):
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-09-06 14:30:08,087][MainThread:4506424768][task_id:scrapy.core.scraper][scraper.py:158][ERROR][Spider error processing <GET https://data.stats.gov.cn/waf_verify.htm> (referer: https://data.stats.gov.cn/waf_verify.htm)]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthCategory.py", line 35, in parse_column
+    for column in json.loads(column_str):
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-09-06 14:45:34,144][MainThread:4418901440][task_id:scrapy.core.scraper][scraper.py:234][ERROR][Error processing {'dbcode': 'hgyd', 'id': 'A01', 'isParent': True, 'name': '价格指数', 'pid': '', 'wdcode': 'zb', 'decode': '价格指数'}]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/pipelines.py", line 38, in process_item
+    self.insert_db(item)
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/pipelines.py", line 55, in insert_db
+    self.db_cur.execute(sql, values)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/cursors.py", line 163, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/cursors.py", line 321, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 724, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "/usr/local/lib/python3.7/site-packages/pymysql/protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.7/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1205, 'Lock wait timeout exceeded; try restarting transaction')
+[2020-09-06 14:56:22,922][MainThread:4563420608][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm> (referer: None)]
+Traceback (most recent call last):
+  File "_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.pyx", line 95, in _pydevd_frame_eval.pydevd_frame_evaluator_darwin_37_64.get_bytecode_while_frame_eval
+KeyError: '/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'category_db.t_month_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthDataList.py", line 26, in parse
+    category_list = MonthCategoryDao.get_child_list()
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/month_category_db.py", line 73, in get_child_list
+    .filter(cls.BO.isParent == '0') \
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3211, in all
+    return list(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3392, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'category_db.t_month_category' doesn't exist")
+[SQL: SELECT t_month_category.id AS t_month_category_id, t_month_category.pid AS t_month_category_pid, t_month_category.wdcode AS t_month_category_wdcode, t_month_category.dbcode AS t_month_category_dbcode, t_month_category.`isParent` AS `t_month_category_isParent`, t_month_category.name AS t_month_category_name 
+FROM t_month_category 
+WHERE t_month_category.`isParent` = %(isParent_1)s]
+[parameters: {'isParent_1': '0'}]
+(Background on this error at: http://sqlalche.me/e/f405)
+[2020-09-06 14:58:07,414][MainThread:4770944448][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm> (referer: None)]
+Traceback (most recent call last):
+  File "_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.pyx", line 95, in _pydevd_frame_eval.pydevd_frame_evaluator_darwin_37_64.get_bytecode_while_frame_eval
+KeyError: '/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'category_db.t_month_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthDataList.py", line 26, in parse
+    category_list = MonthCategoryDao.get_child_list()
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/month_category_db.py", line 73, in get_child_list
+    .filter(cls.BO.isParent == '0') \
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3211, in all
+    return list(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3392, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'category_db.t_month_category' doesn't exist")
+[SQL: SELECT t_month_category.id AS t_month_category_id, t_month_category.pid AS t_month_category_pid, t_month_category.wdcode AS t_month_category_wdcode, t_month_category.dbcode AS t_month_category_dbcode, t_month_category.`isParent` AS `t_month_category_isParent`, t_month_category.name AS t_month_category_name 
+FROM t_month_category 
+WHERE t_month_category.`isParent` = %(isParent_1)s]
+[parameters: {'isParent_1': '0'}]
+(Background on this error at: http://sqlalche.me/e/f405)
+[2020-09-06 14:58:38,385][MainThread:4774512064][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/easyquery.htm> (referer: None)]
+Traceback (most recent call last):
+  File "_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.pyx", line 95, in _pydevd_frame_eval.pydevd_frame_evaluator_darwin_37_64.get_bytecode_while_frame_eval
+KeyError: '/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/dialects/mysql/__init__.py'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'category_db.t_month_category' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthDataList.py", line 26, in parse
+    category_list = MonthCategoryDao.get_child_list()
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/db/month_category_db.py", line 73, in get_child_list
+    .filter(cls.BO.isParent == '0') \
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3211, in all
+    return list(self)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3392, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'category_db.t_month_category' doesn't exist")
+[SQL: SELECT t_month_category.id AS t_month_category_id, t_month_category.pid AS t_month_category_pid, t_month_category.wdcode AS t_month_category_wdcode, t_month_category.dbcode AS t_month_category_dbcode, t_month_category.`isParent` AS `t_month_category_isParent`, t_month_category.name AS t_month_category_name 
+FROM t_month_category 
+WHERE t_month_category.`isParent` = %(isParent_1)s]
+[parameters: {'isParent_1': '0'}]
+(Background on this error at: http://sqlalche.me/e/f405)
+[2020-09-06 15:44:34,048][MainThread:4548154816][task_id:scrapy.core.scraper][scraper.py:168][ERROR][Spider error processing <GET https://data.stats.gov.cn/waf_verify.htm> (referer: https://data.stats.gov.cn/easyquery.htm)]
+Traceback (most recent call last):
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/defer.py", line 120, in iter_errback
+    yield next(it)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/utils/python.py", line 347, in __next__
+    return next(self.data)
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 340, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/zhangshuai/Work/Code/LiveYu/Falcon/venv/lib/python3.7/site-packages/scrapy/core/spidermw.py", line 64, in _evaluate_iterable
+    for r in iterable:
+  File "/Users/zhangshuai/Economic/economic_scrapy/economic_scrapy/spiders/govMonthCategory.py", line 35, in parse_column
+    for column in json.loads(column_str):
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

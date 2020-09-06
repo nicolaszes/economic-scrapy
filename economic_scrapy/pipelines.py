@@ -4,6 +4,10 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import sys
+sys.path.insert(0, "/usr/lib/python3.7/site-packages")
+
+
 import pymysql
 
 
@@ -11,7 +15,7 @@ class MySQLPipeline(object):
     # 打开数据库
     def open_spider(self, spider):
         db = spider.settings.get('MYSQL_DB_NAME', 'category_db')
-        host = spider.settings.get('MYSQL_HOST', 'localhost')
+        host = spider.settings.get('MYSQL_HOST', '47.103.221.1')
         port = spider.settings.get('MYSQL_PORT', 3306)
         user = spider.settings.get('MYSQL_USER', 'root')
         passwd = spider.settings.get('MYSQL_PASSWORD', 'Nicolas199')
@@ -60,7 +64,7 @@ class MySQLPipeline(object):
             (item['pid'], item['wdcode'], item['dbcode'], item['isParent'], item['name'], item['id'])
         )
         self.db_conn.commit()
-    
+
     # 查询数据
     def search_db(self, item):
         self.db_cur.execute("""SELECT * from t_month_category where id = %s""", (item["id"]))

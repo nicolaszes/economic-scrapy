@@ -11,7 +11,7 @@
 
 # mysql 配置
 MYSQL_DB_NAME = 'category_db'
-MYSQL_HOST = 'localhost'
+MYSQL_HOST = '47.103.221.1'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = 'Nicolas199'
 ITEM_PIPELINES = {

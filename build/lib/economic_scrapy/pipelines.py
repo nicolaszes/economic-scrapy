@@ -11,7 +11,7 @@ class MySQLPipeline(object):
     # 打开数据库
     def open_spider(self, spider):
         db = spider.settings.get('MYSQL_DB_NAME', 'category_db')
-        host = spider.settings.get('MYSQL_HOST', 'localhost')
+        host = spider.settings.get('MYSQL_HOST', '47.103.221.1')
         port = spider.settings.get('MYSQL_PORT', 3306)
         user = spider.settings.get('MYSQL_USER', 'root')
         passwd = spider.settings.get('MYSQL_PASSWORD', 'Nicolas199')

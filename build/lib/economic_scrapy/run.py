@@ -6,6 +6,6 @@
 from scrapy import cmdline
 
 
-name = 'govMonthDataList'
+name = 'govMonthCategory'
 cmd = 'scrapy crawl {0}'.format(name)
 cmdline.execute(cmd.split())
